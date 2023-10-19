@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap bağlantı -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- harita kütüphanesi bağlantı -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <title>Note Map</title>
+</head>
+<body>
+    <!-- sol menü -->
+   <div class="wrapper">
+    <aside >
+        <h1>
+            <span>Notlar</span>
+            <input checked="true" type="checkbox" id="checkbox" />
+            <label for="checkbox" class="toggle">
+              <div class="bars" id="bar1"></div>
+              <div class="bars" id="bar2"></div>
+              <div class="bars" id="bar3"></div>
+            </label>
+        </h1>
+        <!-- ekleme formu -->
+        <form>
+            <div class="field">
+                <label>Not Ekle:</label>
+                <input id="title" placeholder="örn: iş ziyareti" type="text">
+            </div>
+            <div class="field">
+                <label>Tarih Ekle:</label>
+                <input type="date">
+            </div>
+            <div class="field">
+                <label>Durum:</label>
+                <select >
+                    <option value="park">Park Yeri</option>
+                    <option value="home">Ev</option>
+                    <option value="job">İş</option>
+                    <option value="goto">Ziyaret</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button type="submit" id="save">Ekle</button>
+                <button type="button" id="cancel">İptal</button>
+
+            </div>
+            
+        </form>
+        <!-- eklenen notların listesi -->
+        <ul>
+            <!-- <li>
+                <div>
+                    <p>Önemli Konum</p>
+                    <p><span>Tarih:</span>10/21/23</p>
+                    <p><span>Durum:</span>İş</p>
+                </div>
+                <i id="fly" class="bi bi-airplane-fill"></i>
+                <i id="delete" class="bi bi-trash3"></i>
+            </li> -->
+        </ul>
+
+    </aside>
+   </div>
+    <!-- harita js den ekrana basılacak -->
+    <div id="map"></div>
+    <!-- js bağnaltı -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
